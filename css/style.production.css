@@ -1,0 +1,318 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 2 version
+*/
+
+body {
+    font-family: 'Outfit', sans-serif; 
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+a {
+    color: #1e90ff;
+}
+
+a:visited {
+    /* visited link */
+    color: #f604e6;
+}
+
+a:hover, a:focus {
+    /* No underlining when hovering over a link */
+    text-decoration: none;
+}
+
+a:active {
+    /* selected link */
+    color: #09e8ef;
+}
+
+button {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  display: inline-block; 
+
+  /* takes the font from the outer container */
+  font-family: inherit;
+
+  /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+
+  /* adds spacing to the button */
+  padding: 10px;
+  border-radius: 20px;
+
+  /*
+  Width of the border, type, color, opacity transition. 
+  -Gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format.
+  */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3); 
+
+  /* Now that everything’s ready to go, let’s add an opacity transition that lasts 0.2s to the button: */
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+}
+
+.button {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  display: inline-block; 
+
+  /* takes the font from the outer container */
+  font-family: inherit;
+
+  /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+
+  /* adds spacing to the button */
+  padding: 10px;
+  border-radius: 20px;
+
+  /*
+  Width of the border, type, color, opacity transition. 
+  -Gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format.
+  */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3); 
+
+  /* Now that everything’s ready to go, let’s add an opacity transition that lasts 0.2s to the button: */
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+}
+
+button:hover, 
+button:focus, 
+.button:hover, 
+.button:focus {
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.6;
+}
+
+.button__secondary {
+  background-color: #00C700;
+  color: white;
+}
+
+.navigation-list__item--active {
+  text-decoration: none;
+}
+
+.profile__portrait {
+  float: left;
+  width: 250px;
+  margin-right: 40px;
+  border-radius: 50%;
+}
+
+.page-footer {
+  clear: both; 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  text-align: center;
+}
+
+/*  Universal selector that will apply the box-sizing property/styling to all HTML elements within the CSS file  */
+
+* {                             
+  -webkit-box-sizing: border-box;                             
+          box-sizing: border-box;  
+}
+
+/* Make parent container a Flexbox container and let it cover the full width of the page with 20px of padding on all sides */
+.page-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 20px; 
+  border-bottom: 2px solid rgba(170, 170, 170, 0.1);
+}
+
+.page-header__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 200px;
+          flex: 0 1 200px;
+}
+
+/* To target the navigation, we use the pseudo-selector :last-child as it’s the last child of the two flexbox child items: */
+.page-header__item:last-child {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; 
+  text-align: right;
+}
+
+.navigation-list {
+  list-style-type: none;
+}
+
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+/* start grid fallback */
+.projects-grid__item {
+  display: inline-block;
+  width: 33%;
+}
+/* end grid fallback */
+
+@supports (display: grid) {
+  .projects-grid {
+    display: -ms-grid;
+    display: grid;
+    /* grid-template-columns: 300px 300px 300px; fractions (as shown below) are better than pixels - they are responsive */
+    -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    margin: 0;
+  }
+
+  .projects-grid__item {
+    background-color: #d3d3d3;
+    width: auto;
+    min-height: auto;
+    padding: 10px;
+    margin: 0;
+  }
+
+  .projects-grid__item:last-child {
+    -ms-grid-column: 3;
+    grid-column: 3/3; /* shorthand for 'grid-column-start'and 'grid-column-end' */
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1/3;    /* shorthand for 'grid-row-start'and 'grid-row-end' */
+    padding: 10px;
+  }
+}
+
+/* Media queries */
+@media all and (max-width: 500px) {
+  .projects-grid {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+  .projects-grid {
+    -ms-grid-columns: 1fr 20px 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Media query for code shared between the above two media queries */
+@media all and (max-width: 750px) {      
+  .projects-grid {
+    grid-gap: 10px;
+  }
+  .projects-grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
+
+/* CSS animations */
+#svg-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-row: auto;
+  background-color: rgb(198, 247, 51);
+}
+
+#svg1 {
+  width: 100%;
+  height: 400px;
+  cursor: pointer;
+  background-color: lightcyan;
+}
+
+#svg2 {
+  width: 100%;
+  height: 400px;
+  cursor: pointer;
+  background-color: lightcyan;
+}
+
+#layer1 {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-transform: translateY(20%);
+          transform: translateY(20%);
+}
+
+@-webkit-keyframes layer1-move {
+  from {
+    -webkit-transform: translate(-10%, 20%);
+            transform: translate(-10%, 20%);
+  }
+  to {
+    -webkit-transform: translate(50%, 30%);
+            transform: translate(50%, 30%);
+  }
+}
+
+@keyframes layer1-move {
+  from {
+    -webkit-transform: translate(-10%, 20%);
+            transform: translate(-10%, 20%);
+  }
+  to {
+    -webkit-transform: translate(50%, 30%);
+            transform: translate(50%, 30%);
+  }
+}
+
+#layer1 {
+  -webkit-animation: 30s layer1-move infinite alternate ease-in-out;
+          animation: 30s layer1-move infinite alternate ease-in-out;
+}
