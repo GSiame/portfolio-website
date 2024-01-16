@@ -12,6 +12,13 @@ body {
     line-height: 1.6;
 }
 
+/*  Universal selector that will apply the box-sizing property/styling to all HTML elements within the CSS file  */
+
+* {                             
+  -webkit-box-sizing: border-box;                             
+          box-sizing: border-box;  
+}
+
 h1 {
     font-size: 30px;
     font-weight: 700;
@@ -150,15 +157,9 @@ button:focus,
   margin: 0 auto;
 }
 
-.contact-info {
+.contact-info,
+.projects-heading {
   text-align: center;
-}
-
-/*  Universal selector that will apply the box-sizing property/styling to all HTML elements within the CSS file  */
-
-* {                             
-  -webkit-box-sizing: border-box;                             
-          box-sizing: border-box;  
 }
 
 /* Make parent container a Flexbox container and let it cover the full width of the page with 20px of padding on all sides */
@@ -316,3 +317,41 @@ button:focus,
   -webkit-animation: 30s layer1-move infinite alternate ease-in-out;
           animation: 30s layer1-move infinite alternate ease-in-out;
 }
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background-color: black;
+  color: white;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: rgba(242, 242, 10, 0.946);
+}
+
+
+
+.centre {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+  margin-left: 22px;
+}
+
+
